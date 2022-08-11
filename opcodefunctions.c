@@ -64,3 +64,24 @@ void _pallop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 		surfer = surfer->next;
 	}
 }
+
+/**
+ * _pintop - prints the value at the top of the stack, followed by a new line
+ * @stack: top of the stack
+ * @linenumber: line number
+ * Return: nothing
+ */
+void _pintop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+{
+	if (stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", linenumber);
+		exit(EXIT_FAILURE);
+	}
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", linenumber);
+		exit(EXIT_FAILURE);
+	}
+	printf("%i\n", (*stack)->n);
+}

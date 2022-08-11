@@ -37,6 +37,8 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
+extern stack_t *stack;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -55,5 +57,6 @@ void executeopcode(char *opcode, stack_t **stack, unsigned int linenumber);
 void _pushop(stack_t **stack, unsigned int linenumber);
 void _pallop(stack_t **stack, __attribute__((unused))unsigned int linenumber);
 void freestack(stack_t **stack);
+void _pintop(stack_t **stack, __attribute__((unused))unsigned int linenumber);
 
 #endif

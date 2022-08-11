@@ -63,6 +63,7 @@ void executeopcode(char *opcode, stack_t **stack, unsigned int linenumber)
 	instruction_t opcodestocheck[] = {
 		{"push", _pushop},
 		{"pall", _pallop},
+		{"pint", _pintop},
 		{NULL, NULL}
 	};
 	void (*operation)(stack_t **stack, unsigned int line_number);
