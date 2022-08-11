@@ -66,6 +66,8 @@ void executeopcode(char *opcode, stack_t **stack, unsigned int linenumber)
 		{"pall", _pallop},
 		{"pint", _pintop},
 		{"pop", _popop},
+		{"swap", _swapop},
+		{"add", _addop},
 		{NULL, NULL}
 	};
 	void (*operation)(stack_t **stack, unsigned int line_number);

@@ -114,3 +114,24 @@ void _popop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 	free(*stack);
 	*stack = drpopper;
 }
+
+/**
+ * _swapop - cleverly swaps the top two elements of the stack 
+ * by swapping their values
+ * @stack: top of the stack
+ * @linenumber: line number
+ * Return: nothing
+ */
+void _swapop(stack_t **stack, unsigned int linenumber)
+{
+	int swappy; /* will hold value of n to switch */
+
+	if ((stack == NULL) || (*stack == NULL) || (((*stack)->next) == NULL))
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", linenumber);
+		exit(EXIT_FAILURE);
+	}
+	swappy = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = swappy;
+}
