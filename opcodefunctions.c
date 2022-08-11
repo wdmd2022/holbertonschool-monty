@@ -94,7 +94,7 @@ void _pintop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
  */
 void _popop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 {
-        stack_t *drpopper;
+	stack_t *drpopper;
 
 	if (stack == NULL)
 	{
