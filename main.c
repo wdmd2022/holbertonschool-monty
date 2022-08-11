@@ -45,7 +45,8 @@ int main(int argc, char *argv[])
 		executeopcode(opcode, &stack, linenumber);
 		linenumber++;
 	}
-	freestack(&stack);
+	if (stack)
+		freestack(&stack);
 	free(buffer);
 	fclose(filepointer);
 	return (0);
@@ -64,6 +65,7 @@ void executeopcode(char *opcode, stack_t **stack, unsigned int linenumber)
 		{"push", _pushop},
 		{"pall", _pallop},
 		{"pint", _pintop},
+		{"pop", _popop},
 		{NULL, NULL}
 	};
 	void (*operation)(stack_t **stack, unsigned int line_number);

@@ -16,7 +16,7 @@ void freestack(stack_t **stack)
 	while (*stack)
 	{
 		memoryreaper = *stack;
-		*stack = memoryreaper->next;
+		*stack = (*stack)->next;
 		free(memoryreaper);
 	}
 }

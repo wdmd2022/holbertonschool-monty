@@ -85,3 +85,32 @@ void _pintop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 	}
 	printf("%i\n", (*stack)->n);
 }
+
+/**
+ * _popop - removes the top element from the stack
+ * @stack: top of the stack
+ * @linenumber: line number
+ * Return: nothing
+ */
+void _popop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
+{
+        stack_t *drpopper;
+
+	if (stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", linenumber);
+		exit(EXIT_FAILURE);
+	}
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", linenumber);
+		exit(EXIT_FAILURE);
+	}
+	drpopper = (*stack)->next;
+	if ((*stack)->next != NULL)
+	{
+		(*stack)->next->prev = NULL;
+	}
+	free(*stack);
+	*stack = drpopper;
+}

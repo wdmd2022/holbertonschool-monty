@@ -58,5 +58,6 @@ void _pushop(stack_t **stack, unsigned int linenumber);
 void _pallop(stack_t **stack, __attribute__((unused))unsigned int linenumber);
 void freestack(stack_t **stack);
 void _pintop(stack_t **stack, __attribute__((unused))unsigned int linenumber);
+void _popop(stack_t **stack, __attribute__((unused))unsigned int linenumber);
 
 #endif
