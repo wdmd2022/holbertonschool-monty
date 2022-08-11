@@ -24,3 +24,14 @@ void _addop(stack_t **stack, unsigned int linenumber)
 	free(*stack);
 	*stack = jumpmasterflash;
 }
+
+/**
+ * _nopop - does nothing, but does it without messing stuff up
+ * @stack: top of the stack
+ * @linenumber: line number;
+ * Return: Nothing, sensibly
+ */
+void _nopop(__attribute__((unused))stack_t **stack, unsigned int linenumber)
+{
+	(void)linenumber;
+}
