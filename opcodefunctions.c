@@ -20,7 +20,7 @@ void _pushop(stack_t **stack, unsigned int linenumber)
 	}
 	for (; reqargstring[i] != '\0'; i++)
 	{
-		if (reqargstring[0] = '-')
+		if (reqargstring[0] == '-')
 			continue;
 		if (!isdigit(reqargstring[i]))
 		{
