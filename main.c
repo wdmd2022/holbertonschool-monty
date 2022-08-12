@@ -77,12 +77,17 @@ void executeopcode(char *opcode, stack_t **stack, unsigned int linenumber)
 	{
 		if (strcmp(opcode, opcodestocheck[index].opcode) == 0)
 			operation = opcodestocheck[index].f;
+		else if (opcodestocheck[index].f == NULL)
+		{
+			fprintf(stderr, "L%u: unknown instruction %s\n", linenumber, opcode);
+			exit(EXIT_FAILURE);
+		}
 	}
 	/* if (!operation) */
-	if (opcodestocheck[index].f == NULL)
-	{
-		fprintf(stderr, "L:%u: unknown instruction %s\n", linenumber, opcode);
-		exit(EXIT_FAILURE);
-	}
+	/* if (opcodestocheck[index].f == NULL) */
+	/* { */
+		/* fprintf(stderr, "L%u: unknown instruction %s\n", linenumber, opcode); */
+		/* exit(EXIT_FAILURE); */
+	/* } */
 	operation(stack, linenumber);
 }
