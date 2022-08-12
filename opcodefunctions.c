@@ -116,7 +116,7 @@ void _popop(stack_t **stack, __attribute__((unused))unsigned int linenumber)
 }
 
 /**
- * _swapop - cleverly swaps the top two elements of the stack 
+ * _swapop - cleverly swaps the top two elements of the stack
  * by swapping their values
  * @stack: top of the stack
  * @linenumber: line number
